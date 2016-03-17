@@ -1,5 +1,14 @@
-**/*.iml
-.idea/
-**/target/**/*
-rop-client-js/**/*
+/target
+/.settings
+/.project
+/.classpath
+/1
+/derby.log
 
+# IntelliJ Idea
+.idea/
+out/
+*.ipr
+*.iws
+*.iml
+/bin

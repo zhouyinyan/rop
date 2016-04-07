@@ -5,7 +5,6 @@ package com.rop.sample;
 
 import com.rop.annotation.NeedInSessionType;
 import com.rop.annotation.ServiceMethod;
-import com.rop.annotation.ServiceMethodBean;
 import com.rop.sample.request.LogonRequest;
 
 /**
@@ -14,6 +13,6 @@ import com.rop.sample.request.LogonRequest;
  */
 public interface UserServiceInterface {
 
-    @ServiceMethod(method = "user.getSession",version = "1.0",needInSession = NeedInSessionType.NO)
+    @ServiceMethod(method = "user.getSession",timeout = -1,version = "1.0",needInSession = NeedInSessionType.NO)
     Object getSession(LogonRequest request);
 }

@@ -20,7 +20,7 @@
         service-access-controller="serviceAccessController"
         formatting-conversion-service="conversionService"
         ext-error-base-names="i18n/rop/sampleRopError,i18n/rop/sampleRopError1"
-        service-timeout-seconds="10"
+        service-timeout-seconds="-1"
         invoke-times-controller="invokeTimesController"
         upload-file-max-size="10"
         upload-file-types="png,gif"

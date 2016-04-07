@@ -32,12 +32,12 @@ public class ListenersBeanDefinitionParser implements BeanDefinitionParser {
 
         List<Element> listeners = DomUtils.getChildElementsByTagName(element, new String[]{"bean", "ref"});
 
-        for (Element interceptor : listeners) {
+        for (Element listener : listeners) {
             RootBeanDefinition listenerHolderDef = new RootBeanDefinition(RopEventListenerHodler.class);
-            listenerHolderDef.setSource(parserContext.extractSource(interceptor));
+            listenerHolderDef.setSource(parserContext.extractSource(listener));
             listenerHolderDef.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);
 
-            Object listenerBean = parserContext.getDelegate().parsePropertySubElement(interceptor, null);
+            Object listenerBean = parserContext.getDelegate().parsePropertySubElement(listener, null);
             listenerHolderDef.getConstructorArgumentValues().addIndexedArgumentValue(0, listenerBean);
 
             String beanName = parserContext.getReaderContext().registerWithGeneratedName(listenerHolderDef);

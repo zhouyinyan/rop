@@ -1,2 +1,4 @@
-1.SessionManagerÈçºÎÊ¹ÓÃHttpSession×÷Îª»á»°¹ÜÀí¡£
-  ĞèÒª¸ü¸ÄSessionManager½Ó¿Ú£¡
+1.SessionManagerå¦‚ä½•ä½¿ç”¨HttpSessionä½œä¸ºä¼šè¯ç®¡ç†ã€‚
+  éœ€è¦æ›´æ”¹SessionManageræ¥å£ï¼
+  
+2. xxx

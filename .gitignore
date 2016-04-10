@@ -1,9 +1,7 @@
-/target
-/.settings
-/.project
-/.classpath
-/1
-/derby.log
+*target*
+*settings*
+*project*
+*classpath*
 
 # IntelliJ Idea
 .idea/

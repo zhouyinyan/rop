@@ -22,6 +22,9 @@ public class SystemParameterNames {
     //格式化默认参数名
     private static final String FORMAT = "format";
 
+    //时间戳的默认参数名
+    private static final String TIMESTAMP = "timestamp";
+
     //本地化默认参数名
     private static final String LOCALE = "locale";
 
@@ -38,6 +41,8 @@ public class SystemParameterNames {
     private static final String SIGN = "sign";
 
     private static String method = METHOD;
+
+    private static String timestamp = TIMESTAMP;
 
     private static String format = FORMAT;
 
@@ -66,6 +71,14 @@ public class SystemParameterNames {
 
     public static void setFormat(String format) {
         SystemParameterNames.format = format;
+    }
+
+    public static String getTimestamp() {
+        return timestamp;
+    }
+
+    public static void setTimestamp(String timestamp) {
+        SystemParameterNames.timestamp = timestamp;
     }
 
     public static String getLocale() {

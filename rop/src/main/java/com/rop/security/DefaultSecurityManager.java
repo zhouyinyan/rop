@@ -14,6 +14,7 @@ import com.rop.session.SessionManager;
 import com.rop.utils.RopUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 
@@ -73,6 +74,12 @@ public class DefaultSecurityManager implements SecurityManager {
                                        context.getAppKey());
         }
 
+        // 检查timestamp
+        if (StringUtils.isEmpty(context.getTimestamp())) {
+            return MainErrors.getError(MainErrorType.MISSING_TIMESTAMP, context.getLocale(),
+                    context.getMethod(),context.getVersion(),
+                    SystemParameterNames.getTimestamp());
+        }
 
         //2.检查会话
         mainError = checkSession(context);

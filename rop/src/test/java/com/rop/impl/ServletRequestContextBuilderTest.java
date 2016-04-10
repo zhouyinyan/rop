@@ -73,10 +73,13 @@ public class ServletRequestContextBuilderTest {
         //构造HttpServletRequest
         MockHttpServletRequest servletRequest = new MockHttpServletRequest();
 
+        String timestamp = String.valueOf(System.currentTimeMillis());
+
         servletRequest.setParameter(SystemParameterNames.getAppKey(), "appKey1");
         servletRequest.setParameter(SystemParameterNames.getSessionId(), "sessionId1");
         servletRequest.setParameter(SystemParameterNames.getMethod(), "method1");
         servletRequest.setParameter(SystemParameterNames.getVersion(), "3.0");
+        servletRequest.setParameter(SystemParameterNames.getTimestamp(), timestamp);
         servletRequest.setParameter(SystemParameterNames.getLocale(), "en_UK");
         servletRequest.setParameter(SystemParameterNames.getFormat(), "xml");
         servletRequest.setParameter(SystemParameterNames.getSign(), "sign1");
@@ -88,7 +91,7 @@ public class ServletRequestContextBuilderTest {
         SimpleRopRequestContext requestContext =
                 requestContextBuilder.buildBySysParams(ropContext, servletRequest,null);
 
-        assertEquals(requestContext.getAllParams().size(), 10);
+        assertEquals(requestContext.getAllParams().size(), 11);
         assertEquals(requestContext.getParamValue("param1"), "value1");
         assertEquals(requestContext.getRawRequestObject(), servletRequest);
 
@@ -96,6 +99,8 @@ public class ServletRequestContextBuilderTest {
         assertEquals(requestContext.getSessionId(), "sessionId1");
         assertEquals(requestContext.getMethod(), "method1");
         assertEquals(requestContext.getVersion(), "3.0");
+        assertEquals(requestContext.getTimestamp(), timestamp);
+
         assertEquals(requestContext.getLocale(), new Locale("zh", "CN"));
         assertEquals(requestContext.getFormat(), "xml");
         assertEquals(requestContext.getMessageFormat(), MessageFormat.xml);

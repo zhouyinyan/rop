@@ -11,7 +11,12 @@ import com.rop.client.DefaultRopClient;
 import com.rop.request.UploadFile;
 import com.rop.response.ErrorResponse;
 import com.rop.sample.converter.TelephoneConverter;
-import com.rop.sample.request.*;
+import com.rop.sample.request.Address;
+import com.rop.sample.request.CreateUserRequest;
+import com.rop.sample.request.LogonRequest;
+import com.rop.sample.request.Street;
+import com.rop.sample.request.Telephone;
+import com.rop.sample.request.UploadUserPhotoRequest;
 import com.rop.sample.response.CreateUserResponse;
 import com.rop.sample.response.LogonResponse;
 import com.rop.sample.response.UploadUserPhotoResponse;
@@ -21,9 +26,13 @@ import org.springframework.core.io.ClassPathResource;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.util.*;
+import java.util.ArrayList;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNull;
+import static org.testng.Assert.assertTrue;
 
 /**
  * <pre>
@@ -251,5 +260,6 @@ public class UserServiceClient {
         assertTrue(response.isSuccessful());
         assertTrue(response.getSuccessResponse() instanceof CreateUserResponse);
     }
+
 }
 

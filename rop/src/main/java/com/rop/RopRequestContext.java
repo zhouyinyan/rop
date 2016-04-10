@@ -226,5 +226,9 @@ public interface RopRequestContext {
      * @return
      */
     String getRequestId();
+
+    void setTimestamp(String timestamp);
+
+    String getTimestamp();
 }
 

@@ -27,6 +27,7 @@ public enum MainErrorType {
     MISSING_SESSION,
     INVALID_SESSION,
     MISSING_APP_KEY,
+    MISSING_TIMESTAMP,
     INVALID_APP_KEY,
     MISSING_SIGNATURE,
     INVALID_SIGNATURE,
@@ -73,6 +74,7 @@ public enum MainErrorType {
         errorCodeMap.put(MainErrorType.EXCEED_SESSION_INVOKE_LIMITED, "35");
         errorCodeMap.put(MainErrorType.EXCEED_APP_INVOKE_LIMITED, "36");
         errorCodeMap.put(MainErrorType.EXCEED_APP_INVOKE_FREQUENCY_LIMITED, "37");
+        errorCodeMap.put(MainErrorType.MISSING_TIMESTAMP, "38");
     }
 
     public String value() {

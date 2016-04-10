@@ -269,18 +269,28 @@
 
     <profiles>
         <profile>
-            <id>localDM</id>
+            <id>nexus</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <distributionManagement>
+                <!--<repository>-->
+                    <!--<id>internal.repo.release</id>-->
+                    <!--<url>http://10.188.182.140:8081/nexus/content/repositories/releases/</url>-->
+                <!--</repository>-->
+                <!--<snapshotRepository>-->
+                    <!--<id>internal.repo.snapshot</id>-->
+                    <!--<url>http://10.188.182.140:8081/nexus/content/repositories/snapshots/</url>-->
+                <!--</snapshotRepository>-->
                 <repository>
-                    <id>internal.repo.release</id>
-                    <url>http://10.188.182.140:8081/nexus/content/repositories/releases/</url>
+                    <id>releases</id>
+                    <name>Releases</name>
+                    <url>http://maven.zbjwork.com:8081/nexus/content/repositories/releases/</url>
                 </repository>
                 <snapshotRepository>
-                    <id>internal.repo.snapshot</id>
-                    <url>http://10.188.182.140:8081/nexus/content/repositories/snapshots/</url>
+                    <id>snapshots</id>
+                    <name>Snapshots</name>
+                    <url>http://maven.zbjwork.com:8081/nexus/content/repositories/snapshots/</url>
                 </snapshotRepository>
             </distributionManagement>
         </profile>

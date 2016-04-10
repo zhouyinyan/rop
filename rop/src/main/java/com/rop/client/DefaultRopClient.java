@@ -152,6 +152,10 @@ public class DefaultRopClient implements RopClient {
         return this;
     }
 
+    public RopClient setTimestampParamName(String timestampName) {
+        SystemParameterNames.setTimestamp(timestampName);
+        return this;
+    }
 
     public RopClient setLocaleParamName(String paramName) {
         SystemParameterNames.setLocale(paramName);
@@ -185,6 +189,7 @@ public class DefaultRopClient implements RopClient {
         private DefaultClientRequest(RopClient ropClient) {
             this.ropClient = ropClient;
             paramMap.put(SystemParameterNames.getAppKey(), appKey);
+            paramMap.put(SystemParameterNames.getTimestamp(), String.valueOf(System.currentTimeMillis()));
             paramMap.put(SystemParameterNames.getFormat(), messageFormat.name());
             paramMap.put(SystemParameterNames.getLocale(), locale.toString());
             if (sessionId != null) {
@@ -324,6 +329,7 @@ public class DefaultRopClient implements RopClient {
 
             //系统级参数
             form.put(SystemParameterNames.getAppKey(), appKey);
+            form.put(SystemParameterNames.getTimestamp(), ropRequest.getRopRequestContext().getTimestamp());
             form.put(SystemParameterNames.getMethod(), methodName);
             form.put(SystemParameterNames.getVersion(), version);
             form.put(SystemParameterNames.getFormat(), messageFormat.name());

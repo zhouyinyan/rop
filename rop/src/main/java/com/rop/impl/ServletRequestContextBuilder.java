@@ -4,12 +4,17 @@
  */
 package com.rop.impl;
 
-import com.rop.*;
+import com.rop.AbstractRopRequest;
+import com.rop.MessageFormat;
+import com.rop.RequestContextBuilder;
+import com.rop.RopContext;
+import com.rop.RopRequest;
+import com.rop.RopRequestContext;
+import com.rop.ServiceMethodHandler;
 import com.rop.annotation.HttpAction;
 import com.rop.config.SystemParameterNames;
 import com.rop.security.MainErrorType;
 import com.rop.security.MainErrors;
-import com.rop.session.SessionManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -81,6 +86,7 @@ public class ServletRequestContextBuilder implements RequestContextBuilder {
         requestContext.setSessionId(servletRequest.getParameter(SystemParameterNames.getSessionId()));
         requestContext.setMethod(servletRequest.getParameter(SystemParameterNames.getMethod()));
         requestContext.setVersion(servletRequest.getParameter(SystemParameterNames.getVersion()));
+        requestContext.setTimestamp(servletRequest.getParameter(SystemParameterNames.getTimestamp()));
         requestContext.setLocale(getLocale(servletRequest));
         requestContext.setFormat(getFormat(servletRequest));
         requestContext.setMessageFormat(getResponseFormat(servletRequest));

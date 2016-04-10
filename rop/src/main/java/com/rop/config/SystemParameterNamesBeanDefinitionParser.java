@@ -26,6 +26,7 @@ public class SystemParameterNamesBeanDefinitionParser implements BeanDefinitionP
         String method = element.getAttribute("method-param-name");
         String version = element.getAttribute("version-param-name");
         String format = element.getAttribute("format-param-name");
+        String timestamp = element.getAttribute("timestamp-param-name");
         String locale = element.getAttribute("locale-param-name");
         String sign = element.getAttribute("sign-param-name");
         String jsonp = element.getAttribute("jsonp-param-name");
@@ -44,6 +45,9 @@ public class SystemParameterNamesBeanDefinitionParser implements BeanDefinitionP
         }
         if (StringUtils.hasText(format)) {
             SystemParameterNames.setFormat(format);
+        }
+        if (StringUtils.hasText(timestamp)) {
+            SystemParameterNames.setTimestamp(timestamp);
         }
         if (StringUtils.hasText(locale)) {
             SystemParameterNames.setLocale(locale);

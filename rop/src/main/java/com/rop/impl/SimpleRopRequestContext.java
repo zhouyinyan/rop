@@ -32,6 +32,8 @@ public class SimpleRopRequestContext implements RopRequestContext {
 
     private String sessionId;
 
+    private String timestamp;
+
     private Locale locale;
 
     private String format;
@@ -306,6 +308,14 @@ public class SimpleRopRequestContext implements RopRequestContext {
 
     public String getRequestId() {
         return this.requestId;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 }
 

@@ -329,7 +329,7 @@ public class DefaultRopClient implements RopClient {
 
             //系统级参数
             form.put(SystemParameterNames.getAppKey(), appKey);
-            form.put(SystemParameterNames.getTimestamp(), ropRequest.getRopRequestContext().getTimestamp());
+            form.put(SystemParameterNames.getTimestamp(), paramMap.get(SystemParameterNames.getTimestamp()));
             form.put(SystemParameterNames.getMethod(), methodName);
             form.put(SystemParameterNames.getVersion(), version);
             form.put(SystemParameterNames.getFormat(), messageFormat.name());
